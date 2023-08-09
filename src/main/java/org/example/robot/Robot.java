@@ -30,7 +30,7 @@ public class Robot {
                         System.out.println("no es el rango de la fecha ");
                         correo.correo(
                                 "gordex90@hotmail.com",
-                                "ancon90daniel@gordo123",
+                                "",
                                 "Hola mundo desde InteliJ",
                                 "danielarango990@gmail.com",
                                 "prueba de correo electronico JavaMail");
