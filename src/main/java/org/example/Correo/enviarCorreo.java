@@ -7,10 +7,12 @@ import java.util.Properties;
 
 public class enviarCorreo {
 
-    public void correo (String username, String password, String mensaje, String destinatario, String asunto){
+    public void correo (String mensaje, String destinatario, String asunto){
 
 
         Properties prop = new Properties();
+        String username = "gordex90@hotmail.com";
+        String pass = "ancon90daniel@gordo123";
 
         prop.put("mail.smtp.auth", true);
         prop.put("mail.smtp.starttls.enable", "true");
@@ -21,10 +23,9 @@ public class enviarCorreo {
         Session session = Session.getInstance(prop, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, password);
+                return new PasswordAuthentication(username, pass);
             }
         });
-
 
         try {
 
@@ -44,7 +45,7 @@ public class enviarCorreo {
             // Enviar el mensaje
             Transport.send(message);
 
-            System.out.println("correo enviado " + mensaje) ;
+            System.out.println("correo enviado " + mensaje);
 
         } catch (Exception e) {
             throw new RuntimeException(e);

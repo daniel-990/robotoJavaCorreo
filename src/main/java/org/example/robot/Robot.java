@@ -22,18 +22,13 @@ public class Robot {
                     String mes = horaLocal.split("-")[1];
                     String dia = horaLocal.split("-")[2];
 
-                    if(dia.equals("08")){
-                        System.out.println(mes + "/" + dia +"/" + ano);
-                        db.baseDatos(horaLocal);
-                        
+                    String correoAdondeVa = "danielarango990@gmail.com";
+
+                    if(dia.equals("10")){
+                        String fecha = mes + "/" + dia +"/" + ano;
+                        db.baseDatos(correoAdondeVa,"primer notificacion",fecha,"este es un mensaje de prueba: "+fecha+" / "+correoAdondeVa);
                     }else{
                         System.out.println("no es el rango de la fecha ");
-                        correo.correo(
-                                "gordex90@hotmail.com",
-                                "",
-                                "Hola mundo desde InteliJ",
-                                "danielarango990@gmail.com",
-                                "prueba de correo electronico JavaMail");
                     }
                 }
             },0,intervalosEnMili);
